@@ -1,0 +1,420 @@
+/* =========================
+   Global (one CSS for all)
+   ========================= */
+
+:root{
+  --bg: #0b0c10;
+  --panel: #10131a;
+  --panel-2: #0f1724;
+  --text: #f3f5f7;
+  --muted: #b7c0cc;
+
+  --blue: #19a8ff;
+  --blue-2: #0b6fb5;
+
+  --border: rgba(255,255,255,0.10);
+  --shadow: 0 12px 30px rgba(0,0,0,0.55);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --max: 1100px;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{ height: 100%; }
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 700px at 20% 0%, rgba(25,168,255,0.16), transparent 55%),
+              radial-gradient(900px 500px at 90% 10%, rgba(25,168,255,0.10), transparent 55%),
+              var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+img{ max-width: 100%; display: block; }
+
+/* links */
+a{ color: var(--text); }
+a:hover{ opacity: 0.92; }
+
+/* =========================
+   Layout
+   ========================= */
+
+header{
+  max-width: var(--max);
+  margin: 18px auto 0;
+  padding: 18px 18px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  box-shadow: var(--shadow);
+}
+
+header h1{
+  margin: 0 0 12px;
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+}
+
+main{
+  max-width: var(--max);
+  margin: 16px auto;
+  padding: 18px;
+}
+
+main h2{
+  margin: 0 0 10px;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  letter-spacing: -0.02em;
+  font-weight: 900;
+}
+
+main p{ color: var(--muted); }
+
+footer{
+  max-width: var(--max);
+  margin: 18px auto 28px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+}
+
+/* =========================
+   Nav (pill buttons)
+   ========================= */
+
+nav{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+nav a{
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(25,168,255,0.10);
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+nav a:hover{
+  background: rgba(25,168,255,0.18);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Accueil posters row
+   ========================= */
+
+.posters-row{
+  display: flex;
+  gap: 16px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 2px 6px;
+  scrollbar-width: thin;
+}
+
+.poster{
+  text-decoration: none;
+  color: inherit;
+  min-width: 250px;
+}
+
+.poster img{
+  width: 260px;
+  height: 390px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.55);
+}
+
+.poster h3{
+  margin: 10px 4px 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+/* =========================
+   Films page list (cards)
+   ========================= */
+
+.liste-films{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.film-detail{
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+}
+
+.film-detail img{
+  width: 90px;
+  height: 135px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.16);
+  flex-shrink: 0;
+}
+
+.info h3{
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.info p{
+  margin: 6px 0;
+  color: var(--muted);
+}
+
+.info strong{ color: var(--text); }
+
+.film-detail a img{
+  cursor: pointer;
+}
+
+/* =========================
+   Horaire tables
+   ========================= */
+
+.horaire-table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 22px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+}
+
+.horaire-table th,
+.horaire-table td{
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.horaire-table th{
+  background: rgba(25,168,255,0.12);
+  font-weight: 900;
+}
+
+.horaire-table td:first-child,
+.horaire-table th:first-child{
+  text-align: left;
+  white-space: nowrap;
+  font-weight: 900;
+}
+
+.horaire-table a{
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(25,168,255,0.55);
+}
+
+.horaire-table a:hover{
+  border-bottom-color: rgba(25,168,255,1);
+}
+
+/* =========================
+   Salles (2 columns)
+   ========================= */
+
+.salles-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.salle-card{
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  box-shadow: var(--shadow);
+}
+
+.salle-card h3{
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.salle-card img{
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+.salle-card ul{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.prix{
+  margin-top: 12px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 999px;
+  display: inline-block;
+  background: rgba(25,168,255,0.16);
+  border: 1px solid rgba(25,168,255,0.35);
+}
+
+/* =========================
+   Evenements cards
+   ========================= */
+
+.evenements{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.event-card{
+  display: flex;
+  gap: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+}
+
+.event-card img{
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.16);
+  flex-shrink: 0;
+}
+
+.event-info h3{
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.event-info p{ margin: 6px 0; color: var(--muted); }
+.event-info strong{ color: var(--text); }
+.event-info ul{ margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+
+/* =========================
+   Contact
+   ========================= */
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.contact-card{
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+}
+
+.contact-card h3{
+  margin: 0 0 10px;
+  font-weight: 900;
+}
+
+.contact-card input,
+.contact-card select,
+.contact-card textarea{
+  width: 100%;
+  padding: 10px 10px;
+  margin-top: 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+  outline: none;
+}
+
+.contact-card textarea{ resize: vertical; }
+
+.contact-card button{
+  padding: 10px 14px;
+  border: 1px solid rgba(25,168,255,0.45);
+  background: rgba(25,168,255,0.20);
+  color: var(--text);
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.contact-card button:hover{
+  background: rgba(25,168,255,0.28);
+}
+
+.note{ color: var(--muted); font-size: 0.92rem; }
+
+.map-box{
+  height: 220px;
+  border: 1px dashed rgba(255,255,255,0.25);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  background: rgba(255,255,255,0.03);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 900px){
+  .salles-grid,
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .event-card{
+    flex-direction: column;
+  }
+
+  .event-card img{
+    width: 100%;
+    height: 180px;
+  }
+
+  header h1{
+    line-height: 1.0;
+  }
+}

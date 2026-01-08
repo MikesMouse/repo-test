@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Cinéma des Carrefours</h1>
+
+        <nav>
+            <a href="Accueil.html">Accueil</a>
+            <a href="Films.html">Films</a>
+            <a href="Horaire.html">Horaire</a>
+            <a href="Salles.html">Salles</a>
+            <a href="evenments.html">Événements</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Contact</h2>
+        <p>Une question, un commentaire ou une demande spéciale? Contactez-nous.</p>
+
+        <section class="contact-grid">
+
+            <!-- Coordonnées -->
+            <article class="contact-card">
+                <h3>Coordonnées</h3>
+                <p><strong>Adresse :</strong><br>
+                    123 Rue du Cinéma, Montréal (QC)</p>
+
+                <p><strong>Téléphone :</strong><br>
+                    (514) 555-1234</p>
+
+                <p><strong>Courriel :</strong><br>
+                    info@cinema-exemple.com</p>
+
+                <p><strong>Heures :</strong><br>
+                    Lundi à dimanche — 12:00 à 23:30</p>
+
+                <p>Nous répondons généralement sous 24 à 48 heures.</p>
+            </article>
+
+            <!-- Formulaire -->
+            <article class="contact-card">
+                <h3>Nous écrire</h3>
+
+                <form>
+                    <label>
+                        Nom complet<br>
+                        <input type="text" name="nom">
+                    </label><br><br>
+
+                    <label>
+                        Courriel<br>
+                        <input type="email" name="email">
+                    </label><br><br>
+
+                    <label>
+                        Sujet<br>
+                        <select name="sujet">
+                            <option>Question générale</option>
+                            <option>Réservation de groupe</option>
+                            <option>Événements</option>
+                            <option>Objets perdus</option>
+                        </select>
+                    </label><br><br>
+
+                    <label>
+                        Message<br>
+                        <textarea name="message" rows="5"></textarea>
+                    </label><br><br>
+
+                    <button type="submit">Envoyer</button>
+                </form>
+
+                <p class="note">
+                    Vos informations servent uniquement à répondre à votre message.
+                </p>
+            </article>
+
+        </section>
+
+        <!-- Carte / localisation -->
+        <section class="map-placeholder">
+            <h3>Nous trouver</h3>
+            <div class="map-box">
+                Carte / localisation (placeholder)
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projet OCC - Cinéma</p>
+    </footer>
+</body>
+
+</html>
